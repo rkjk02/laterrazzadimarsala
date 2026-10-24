@@ -1,253 +1,395 @@
-<!doctype html>
-<html lang="{{LANG}}">
+<!DOCTYPE html>
+<html lang="{{codiceLingua}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{SEO_TITLE}}</title>
-  <meta name="description" content="{{SEO_DESCRIPTION}}">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="{{CANONICAL}}">
-  {{HREFLANG}}
-  <link rel="icon" type="image/png" href="{{FAVICON}}">
-  <meta name="theme-color" content="#172b3a">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="La Terrazza">
-  <meta property="og:title" content="{{SEO_TITLE}}">
-  <meta property="og:description" content="{{SEO_DESCRIPTION}}">
-  <meta property="og:url" content="{{CANONICAL}}">
-  <meta property="og:image" content="{{HERO_IMAGE_ABSOLUTE}}">
-  <meta name="twitter:card" content="summary_large_image">
-  {{SCHEMA_JSON}}
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #172b3a;
-      --muted: #5e6870;
-      --paper: #fbf9f5;
-      --white: #fff;
-      --accent: #b69a68;
-      --line: #e6e0d6;
-      --content: 1120px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    .skip-link {
-      position: absolute; left: -9999px; top: 0; z-index: 100;
-      padding: .7rem 1rem; background: var(--white);
-    }
-    .skip-link:focus { left: 1rem; top: 1rem; }
-    .site-header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(251,249,245,.97);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-    .header-inner {
-      width: min(calc(100% - 2.5rem), var(--content));
-      min-height: 76px; margin: auto;
-      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-    }
-    .brand { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; }
-    .brand img { width: 48px; height: 48px; object-fit: contain; }
-    .brand-name { font-size: 1.15rem; letter-spacing: .04em; }
-    .header-right { display: flex; align-items: center; gap: 1.25rem; }
-    .main-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem; }
-    .main-nav a, .language-link {
-      font-family: Arial, sans-serif; font-size: .83rem; text-decoration: none;
-    }
-    .main-nav a:hover, .language-link:hover { color: #80663c; }
-    .language-link { border-left: 1px solid var(--line); padding-left: 1.2rem; white-space: nowrap; }
-    .hero {
-      min-height: min(76vh, 760px); position: relative; isolation: isolate;
-      display: grid; place-items: center; text-align: center; color: var(--white);
-      background: var(--ink); overflow: hidden;
-    }
-    .hero::before {
-      content: ""; position: absolute; inset: 0; z-index: -2;
-      background: url("{{HERO_IMAGE}}") center 50% / cover no-repeat;
-    }
-    .hero::after {
-      content: ""; position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(90deg, rgba(10,23,32,.62), rgba(10,23,32,.30), rgba(10,23,32,.56));
-    }
-    .hero-content { width: min(calc(100% - 2rem), 850px); padding: 6rem 0; }
-    .eyebrow {
-      margin: 0 0 1rem; color: #e4d2ad; text-transform: uppercase;
-      letter-spacing: .19em; font: 600 .75rem/1.5 Arial, sans-serif;
-    }
-    h1, h2, h3 { font-weight: 400; line-height: 1.2; }
-    h1 { margin: 0 auto 1.2rem; font-size: clamp(2.8rem, 7vw, 5.8rem); }
-    .hero-subtitle { max-width: 690px; margin: 0 auto 2rem; font-size: clamp(1.1rem, 2.5vw, 1.45rem); }
-    .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-height: 48px; padding: .7rem 1.2rem; border: 1px solid var(--accent);
-      background: var(--accent); color: #17232a; text-decoration: none;
-      font: 600 .85rem/1.4 Arial, sans-serif; letter-spacing: .01em;
-    }
-    .button.secondary { color: var(--white); background: transparent; border-color: rgba(255,255,255,.75); }
-    .button:hover { filter: brightness(1.06); }
-    .section { padding: clamp(4rem, 8vw, 7rem) 0; }
-    .section.white { background: var(--white); }
-    .section-inner { width: min(calc(100% - 2.5rem), var(--content)); margin: auto; }
-    .section-heading { max-width: 760px; margin: 0 auto 2.7rem; text-align: center; }
-    .section-heading h2 { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 3.25rem); }
-    .section-heading p { margin: .6rem 0 0; color: var(--muted); }
-    .about-copy { max-width: 820px; margin: auto; }
-    .about-copy p { margin: 0 0 1.1rem; }
-    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .service-card { padding: 1.5rem; border: 1px solid var(--line); background: var(--paper); }
-    .service-card h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
-    .service-card p { margin: 0; color: var(--muted); font-size: .96rem; }
-    .apartment-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
-    .apartment-card { min-width: 0; background: var(--white); border: 1px solid var(--line); }
-    .apartment-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #e8e3db; }
-    .apartment-body { padding: 1.5rem; }
-    .apartment-body h3 { margin: 0 0 .6rem; font-size: 1.8rem; }
-    .apartment-meta { margin: 0 0 .8rem; color: var(--muted); font: .83rem/1.5 Arial, sans-serif; }
-    .apartment-body p { margin: 0 0 1rem; }
-    .apartment-gallery { display: flex; gap: .5rem; overflow-x: auto; padding: 0 1.5rem 1.5rem; }
-    .apartment-gallery img { width: 110px; height: 78px; flex: 0 0 auto; object-fit: cover; }
-    .places-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-    .place-card { padding: 1.4rem 1.5rem; border-top: 1px solid var(--accent); background: var(--white); }
-    .place-card h3 { margin: 0 0 .5rem; font-size: 1.4rem; }
-    .place-card p { margin: 0 0 .5rem; }
-    .place-distance { color: var(--muted); font: .82rem/1.5 Arial, sans-serif; }
-    .contact-section { color: var(--white); background: var(--ink); }
-    .contact-section .section-heading p { color: #d4d8da; }
-    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; max-width: 900px; margin: auto; }
-    .contact-panel { padding: 1.5rem; border: 1px solid rgba(255,255,255,.22); }
-    .contact-panel h3 { margin: 0 0 .8rem; color: #e4d2ad; font-size: 1.4rem; }
-    .contact-panel p { margin: .35rem 0; overflow-wrap: anywhere; }
-    .contact-panel a { text-underline-offset: 4px; }
-    .contact-actions { margin-top: 1.5rem; }
-    .site-footer { padding: 1.6rem 1rem; text-align: center; color: var(--muted); font: .8rem/1.7 Arial, sans-serif; }
-    .site-footer a { margin: 0 .5rem; }
-    @media (max-width: 760px) {
-      .header-inner { width: min(calc(100% - 1.5rem), var(--content)); padding: .7rem 0; align-items: flex-start; }
-      .brand img { width: 40px; height: 40px; }
-      .header-right { flex-direction: column-reverse; align-items: flex-end; gap: .45rem; }
-      .main-nav { justify-content: flex-end; gap: .45rem .8rem; }
-      .main-nav a, .language-link { font-size: .75rem; }
-      .language-link { padding-left: .7rem; }
-      .service-grid { grid-template-columns: 1fr; }
-      .apartment-grid, .places-list, .contact-grid { grid-template-columns: 1fr; }
-      .hero { min-height: 68vh; }
-    }
-    @media (max-width: 420px) {
-      .header-inner { gap: .5rem; }
-      .brand-name { font-size: 1rem; }
-      .main-nav { max-width: 225px; }
-      .main-nav a { font-size: .7rem; }
-      .hero-content { padding: 4rem 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta name="theme-color" content="#122B51">
+<link rel="canonical" href="{{canonical}}">
+{{#each alternate}}<link rel="alternate" hreflang="{{codice}}" href="{{url}}">
+{{/each}}<link rel="alternate" hreflang="x-default" href="{{urlPredefinita}}">
+<meta property="og:title" content="{{meta.title}}">
+<meta property="og:description" content="{{meta.description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:locale" content="{{locale}}">
+{{#if ogImmagine}}<meta property="og:image" content="{{ogImmagine}}">
+{{/if}}{{#if haFavicon}}<link rel="icon" type="image/png" href="/favicon.png">
+{{/if}}<script type="application/ld+json">
+{{{jsonld}}}
+</script>
+<style>
+:root{
+  --blu:#122B51; --oro:#C3A174; --bianco:#FEFEFD;
+  --sabbia:#F7F2E9; --sabbia-2:#EDE3D1; --linea:#E1D5BF;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --raggio:.5rem;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:7.75rem}
+@media (min-width:56em){html{scroll-padding-top:5.5rem}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bianco);color:var(--blu);font:1.0625rem/1.65 var(--sans)}
+img{max-width:100%;height:auto}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0 0 .75em;color:var(--blu);font-family:var(--serif);font-weight:700;line-height:1.2}
+h2{font-size:clamp(1.75rem,1.35rem + 1.8vw,2.5rem)}
+h2::after{content:"";display:block;width:3.5rem;height:3px;margin-top:.6rem;background:var(--oro);border-radius:2px}
+h3{font-size:1.375rem}
+p{max-width:65ch;margin:0 0 1em}
+a{text-decoration-thickness:.1em;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:.2em}
+:focus-visible{outline:3px solid var(--blu);outline-offset:2px;box-shadow:0 0 0 2px var(--bianco)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.salta{position:absolute;left:.75rem;top:-6rem;z-index:100;padding:.75rem 1rem;background:var(--blu);color:var(--bianco);border-radius:var(--raggio)}
+.salta:focus{top:.75rem}
+.contenitore{width:min(100% - 2rem,70rem);margin-inline:auto}
+
+/* Pulsanti */
+.pulsante{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.65rem 1.5rem;border:2px solid var(--blu);border-radius:var(--raggio);font:700 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer}
+.pulsante--oro{background:var(--oro);color:var(--blu)}
+.pulsante--oro:hover{background:#D3B88F}
+.pulsante--blu{background:var(--blu);color:var(--bianco)}
+.pulsante--blu:hover{background:#1D4075}
+
+/* Intestazione */
+.header{position:sticky;top:0;z-index:50;background:var(--bianco);border-bottom:1px solid var(--linea)}
+.header__riga{display:grid;grid-template-columns:auto 1fr auto auto;grid-template-areas:"logo . lingue chiama" "menu menu menu menu";align-items:center;gap:.25rem .75rem;padding-block:.5rem}
+.header__logo{grid-area:logo;display:flex;align-items:center;min-height:52px;color:var(--blu);font:700 1.25rem var(--serif);text-decoration:none}
+.header__logo img{display:block;width:52px;height:52px}
+.header__chiama{grid-area:chiama;min-height:44px;padding:.5rem 1.1rem}
+.menu{grid-area:menu;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--oro) transparent}
+.menu ul{display:flex;gap:.25rem;margin:0;padding:0;list-style:none;white-space:nowrap}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 .75rem;font-weight:600;text-decoration:none;border-radius:.375rem}
+.menu a:hover{text-decoration:underline}
+.lingue{grid-area:lingue}
+.lingue ul{display:flex;margin:0;padding:0;list-style:none}
+.lingue li+li{border-left:1px solid var(--oro)}
+.lingue a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 .5rem;font-weight:600;text-decoration:underline}
+.lingue a[aria-current]{font-weight:800;text-decoration-thickness:3px;text-decoration-color:var(--oro)}
+@media (min-width:56em){
+  .header__riga{grid-template-columns:auto 1fr auto;grid-template-areas:"logo menu lingue";gap:1.5rem}
+  .header__chiama{display:none}
+  .menu ul{justify-content:flex-end}
+}
+
+/* Hero */
+.hero{position:relative;display:flex;align-items:flex-end;height:75vh;height:75svh;min-height:26rem;max-height:60rem;overflow:hidden;background:var(--blu);color:var(--bianco)}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__velo{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,43,81,.9),rgba(18,43,81,.7) 55%,rgba(18,43,81,.5))}
+.hero__contenuto{position:relative;padding-block:2rem 3rem}
+.hero h1{margin-bottom:.25em;color:var(--bianco);font-size:clamp(2.75rem,2rem + 5vw,5rem)}
+.hero__sottotitolo{max-width:34ch;margin-bottom:1.5rem;font-size:clamp(1.15rem,1rem + .8vw,1.5rem)}
+
+/* Sezioni */
+.sezione{padding-block:clamp(3rem,7vw,5.5rem)}
+.sezione--sabbia{background:var(--sabbia)}
+.sezione--blu{background:var(--blu);color:var(--bianco)}
+.sezione--blu h2{color:var(--bianco)}
+.evidenza{max-width:none;margin:2rem 0 0;padding:1.1rem 1.25rem;background:var(--sabbia);border:1px solid var(--linea);border-left:.4rem solid var(--oro);border-radius:var(--raggio);color:var(--blu);font-size:1.15rem;font-weight:600}
+
+/* Appartamenti */
+.schede{display:grid;gap:1.5rem;margin-top:2rem}
+.scheda{display:grid;gap:1.25rem;padding:1.25rem;background:var(--bianco);border:1px solid var(--linea);border-radius:.75rem}
+.scheda__testo p:last-child{margin-bottom:0}
+.scheda__dettagli{display:inline-block;padding:.35rem .8rem;background:var(--sabbia-2);border-radius:.375rem;font-weight:700}
+@media (min-width:52em){.scheda{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:2rem;padding:1.75rem;align-items:center}}
+.galleria{position:relative;min-width:0}
+.galleria__pista{display:flex;margin:0;padding:0;overflow-x:auto;list-style:none;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;border-radius:var(--raggio);scrollbar-width:thin;scrollbar-color:var(--oro) transparent}
+@media (prefers-reduced-motion:no-preference){.galleria__pista{scroll-behavior:smooth}}
+.galleria__slide{flex:0 0 100%;scroll-snap-align:center}
+.galleria__slide img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.galleria--vuota{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:var(--sabbia-2);border-radius:var(--raggio);text-align:center}
+.galleria--vuota p{margin:0;font:700 1.1rem var(--serif)}
+.galleria__freccia{position:absolute;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-top:-22px;padding:0 0 .15em;background:var(--bianco);color:var(--blu);border:2px solid var(--blu);border-radius:50%;font:400 1.75rem/1 var(--sans);cursor:pointer}
+.galleria__freccia--prec{left:.5rem}
+.galleria__freccia--succ{right:.5rem}
+.galleria__freccia[aria-disabled="true"]{opacity:.45;cursor:default}
+.galleria__contatore{position:absolute;top:.5rem;right:.5rem;z-index:2;max-width:none;margin:0;padding:.2rem .6rem;background:var(--blu);color:var(--bianco);border-radius:.375rem;font-size:.9rem;font-weight:600;line-height:1.5}
+.servizi{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--linea)}
+.servizi ul{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin:0;padding:0;list-style:none;font-weight:600}
+.servizi li{display:flex;align-items:center;gap:.6rem}
+.servizi li::before{content:"";width:.6rem;height:.6rem;background:var(--oro);border-radius:50%}
+
+/* Dintorni */
+.dintorni__lista{display:grid;gap:1.75rem 2.5rem;margin:2rem 0 0;padding:0;list-style:none}
+.dintorni__lista li{padding-top:1rem;border-top:3px solid var(--oro)}
+.dintorni__lista h3{margin-bottom:.4em}
+.dintorni__lista p{margin:0}
+@media (min-width:44em){.dintorni__lista{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:68em){.dintorni__lista{grid-template-columns:repeat(3,1fr)}}
+
+/* Mappa */
+.indirizzo,.contatti address,.footer address{font-style:normal}
+.indirizzo{margin:0 0 1.5rem;font-size:1.15rem;font-weight:600}
+.mappa__riquadro{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;min-height:18rem;overflow:hidden;background:var(--sabbia-2);border:1px solid var(--linea);border-radius:.75rem}
+@media (min-width:52em){.mappa__riquadro{aspect-ratio:16/9}}
+.mappa__invito{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:1.5rem;text-align:center}
+.mappa__invito p{max-width:34ch;margin:0;font-size:.95rem}
+.mappa__riquadro iframe{display:block;width:100%;height:100%;border:0}
+.mappa__link{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;margin:1rem 0 0;padding:0;list-style:none}
+.mappa__link a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+
+/* Contatti */
+.contatti__griglia{display:grid;gap:1.75rem 3rem;margin:2.5rem 0 0}
+.contatti__griglia dt{margin-bottom:.35rem;color:var(--oro);font-size:.95rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.contatti__griglia dd{margin:0;font-size:1.25rem}
+.contatti__griglia a{display:flex;align-items:center;min-height:44px;font-weight:600}
+@media (min-width:52em){.contatti__griglia{grid-template-columns:repeat(3,auto);justify-content:start}}
+
+/* Piè di pagina */
+.footer{padding-block:2.5rem;background:var(--sabbia);border-top:3px solid var(--oro)}
+.footer__riga{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem 3rem}
+.footer__marchio{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.footer__marchio img{display:block;width:150px;height:150px}
+.footer__nome{margin:0 0 .25rem;font:700 1.5rem var(--serif)}
+.footer p{max-width:none;margin:0 0 .5rem}
+.footer__info .lingue{margin-top:.5rem}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">{{SKIP_LINK_LABEL}}</a>
+<a class="salta" href="#contenuto">{{interfaccia.vaiAlContenuto}}</a>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#home" aria-label="La Terrazza — home">
-        <img src="{{LOGO_IMAGE}}" alt="" width="48" height="48">
-        <span class="brand-name">La Terrazza</span>
-      </a>
-      <div class="header-right">
-        <nav class="main-nav" aria-label="{{NAVIGATION_LABEL}}">
-          {{NAVIGATION}}
-        </nav>
-        <a class="language-link" href="{{LANGUAGE_SWITCH_URL}}" lang="{{LANGUAGE_SWITCH_LANG}}">{{LANGUAGE_SWITCH_LABEL}}</a>
+<header id="header" class="header">
+  <div class="header__riga contenitore">
+    <a class="header__logo" href="{{percorsoHome}}">
+      {{#if haLogo}}<img src="/images/logo.png" alt="{{immagini.altLogo}}" width="52" height="52">{{else}}<span>{{site.nome}}</span>{{/if}}
+    </a>
+    <nav class="menu" aria-label="{{interfaccia.menuPrincipale}}">
+      <ul>
+        <li><a href="#struttura">{{sezioni.struttura.titolo}}</a></li>
+        <li><a href="#appartamenti">{{sezioni.appartamenti.titolo}}</a></li>
+        <li><a href="#dintorni">{{sezioni.dintorni.titolo}}</a></li>
+        <li><a href="#mappa">{{sezioni.mappa.titolo}}</a></li>
+        <li><a href="#contatti">{{sezioni.contatti.titolo}}</a></li>
+      </ul>
+    </nav>
+    <div class="lingue" role="group" aria-label="{{interfaccia.selettoreLingua}}">
+      <ul>
+        {{#each lingue}}<li><a href="{{href}}" lang="{{codice}}" hreflang="{{codice}}" aria-label="{{nome}}"{{#if corrente}} aria-current="page"{{/if}}>{{sigla}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    <a class="pulsante pulsante--blu header__chiama" href="tel:{{site.telefoni.0.numero}}">{{interfaccia.chiama}}</a>
+  </div>
+</header>
+
+<main id="contenuto">
+
+  <section id="hero" class="hero" aria-labelledby="titolo-hero">
+    {{#if haHero}}<img class="hero__img" src="/images/hero.jpg" alt="{{immagini.altHero}}" loading="eager" fetchpriority="high" decoding="async">{{/if}}
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="hero__contenuto contenitore">
+      <h1 id="titolo-hero">{{hero.titolo}}</h1>
+      <p class="hero__sottotitolo">{{hero.sottotitolo}}</p>
+      <a class="pulsante pulsante--oro" href="#contatti">{{hero.pulsante}}</a>
+    </div>
+  </section>
+
+  <section id="struttura" class="sezione" aria-labelledby="titolo-struttura">
+    <div class="contenitore">
+      <h2 id="titolo-struttura">{{sezioni.struttura.titolo}}</h2>
+      <p>{{sezioni.struttura.testo}}</p>
+      <p class="evidenza">{{disponibilita}}</p>
+    </div>
+  </section>
+
+  <section id="appartamenti" class="sezione sezione--sabbia" aria-labelledby="titolo-appartamenti">
+    <div class="contenitore">
+      <h2 id="titolo-appartamenti">{{sezioni.appartamenti.titolo}}</h2>
+      <div class="schede">
+        {{#each appartamenti}}
+        <article class="scheda" id="appartamento-{{id}}" aria-labelledby="titolo-{{id}}">
+          <div class="scheda__testo">
+            <h3 id="titolo-{{id}}">{{nome}}</h3>
+            <p class="scheda__dettagli">{{dettagli}}</p>
+            <p>{{descrizione}}</p>
+          </div>
+          {{#if haFoto}}
+          <div class="galleria" data-galleria data-prec="{{sezioni.appartamenti.fotoPrecedente}}" data-succ="{{sezioni.appartamenti.fotoSuccessiva}}">
+            <ul class="galleria__pista" tabindex="0" aria-label="{{etichettaGalleria}}">
+              {{#each foto}}<li class="galleria__slide"><img src="{{src}}" alt="{{alt}}" width="1200" height="900" loading="lazy" decoding="async"></li>
+              {{/each}}
+            </ul>
+          </div>
+          {{else}}
+          <div class="galleria galleria--vuota"><p>{{sezioni.appartamenti.fotoInArrivo}}</p></div>
+          {{/if}}
+        </article>
+        {{/each}}
+      </div>
+      <div class="servizi" aria-labelledby="titolo-servizi">
+        <h3 id="titolo-servizi">{{sezioni.servizi.titolo}}</h3>
+        <ul>
+          {{#each sezioni.servizi.voci}}<li>{{this}}</li>
+          {{/each}}
+        </ul>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main-content">
-    <section class="hero" id="home" aria-label="{{HERO_IMAGE_ALT}}">
-      <div class="hero-content">
-        <p class="eyebrow">Marsala · Sicilia</p>
-        <h1>{{HERO_TITLE}}</h1>
-        <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
-        <div class="button-row">
-          <a class="button" href="#apartments">{{HERO_PRIMARY_BUTTON}}</a>
-          <a class="button secondary" href="#contact">{{HERO_SECONDARY_BUTTON}}</a>
-        </div>
-      </div>
-    </section>
+  <section id="dintorni" class="sezione" aria-labelledby="titolo-dintorni">
+    <div class="contenitore">
+      <h2 id="titolo-dintorni">{{sezioni.dintorni.titolo}}</h2>
+      <ul class="dintorni__lista">
+        {{#each sezioni.dintorni.voci}}<li>
+          <h3>{{titolo}}</h3>
+          <p>{{testo}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
 
-    <section class="section white" id="about">
-      <div class="section-inner">
-        <div class="section-heading"><h2>{{ABOUT_TITLE}}</h2></div>
-        <div class="about-copy">{{ABOUT_PARAGRAPHS}}</div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="section-inner">
-        <div class="section-heading"><h2>{{SERVICES_TITLE}}</h2></div>
-        <div class="service-grid">{{SERVICES_ITEMS}}</div>
-      </div>
-    </section>
-
-    <section class="section white" id="apartments">
-      <div class="section-inner">
-        <div class="section-heading"><h2>{{APARTMENTS_TITLE}}</h2></div>
-        <div class="apartment-grid">{{APARTMENTS_ITEMS}}</div>
-      </div>
-    </section>
-
-    <section class="section" id="surroundings">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>{{SURROUNDINGS_TITLE}}</h2>
-          <p>{{SURROUNDINGS_INTRO}}</p>
-        </div>
-        <div class="places-list">{{SURROUNDINGS_ITEMS}}</div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>{{CONTACT_TITLE}}</h2>
-          <p>{{CONTACT_INTRO}}</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-panel">
-            <h3>{{CONTACT_DETAILS_HEADING}}</h3>
-            <p><strong>{{PHONE_LABEL}}:</strong></p>
-            {{CONTACT_PHONES}}
-            <p><strong>{{EMAIL_LABEL}}:</strong> <a href="{{EMAIL_URL}}">{{EMAIL_ADDRESS}}</a></p>
-            <p><strong>{{ADDRESS_LABEL}}:</strong> {{CONTACT_ADDRESS}}</p>
-          </div>
-          <div class="contact-panel">
-            <h3>{{BOOKING_HEADING}}</h3>
-            <p>{{WHATSAPP_INTRO}}</p>
-            <div class="contact-actions">
-              <a class="button" href="{{WHATSAPP_URL}}" target="_blank" rel="noopener noreferrer">{{WHATSAPP_LABEL}}</a>
-            </div>
+  <section id="mappa" class="sezione sezione--sabbia" aria-labelledby="titolo-mappa">
+    <div class="contenitore">
+      <h2 id="titolo-mappa">{{sezioni.mappa.titolo}}</h2>
+      <address class="indirizzo">{{site.indirizzo}}</address>
+      <div class="mappa" data-mappa data-src="{{mappaSrc}}" data-titolo="{{sezioni.mappa.titoloIframe}}" hidden>
+        <div class="mappa__riquadro">
+          <div class="mappa__invito">
+            <button type="button" class="pulsante pulsante--blu" data-mostra-mappa>{{sezioni.mappa.pulsante}}</button>
+            <p>{{sezioni.mappa.nota}} <a href="/privacy.html" hreflang="it">{{interfaccia.privacy}}</a></p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+      <ul class="mappa__link">
+        <li><a href="{{site.googleMapsUrl}}" target="_blank" rel="noopener noreferrer">{{sezioni.mappa.apriGoogle}}<span class="sr-only"> {{interfaccia.nuovaScheda}}</span></a></li>
+        <li><a href="{{site.osmUrl}}" target="_blank" rel="noopener noreferrer">{{sezioni.mappa.apriOsm}}<span class="sr-only"> {{interfaccia.nuovaScheda}}</span></a></li>
+      </ul>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <p>{{FOOTER_COPYRIGHT}}</p>
-    <p><a href="{{PRIVACY_URL}}">{{PRIVACY_LABEL}}</a></p>
-  </footer>
+  <section id="contatti" class="sezione sezione--blu contatti" aria-labelledby="titolo-contatti">
+    <div class="contenitore">
+      <h2 id="titolo-contatti">{{sezioni.contatti.titolo}}</h2>
+      <p class="evidenza">{{disponibilita}}</p>
+      <dl class="contatti__griglia">
+        <div>
+          <dt>{{sezioni.contatti.telefono}}</dt>
+          <dd>
+            {{#each site.telefoni}}<a href="tel:{{numero}}">{{visualizzato}}</a>
+            {{/each}}
+          </dd>
+        </div>
+        <div>
+          <dt>{{sezioni.contatti.email}}</dt>
+          <dd><a href="mailto:{{site.email}}">{{site.email}}</a></dd>
+        </div>
+        <div>
+          <dt>{{sezioni.contatti.indirizzo}}</dt>
+          <dd><address>{{site.indirizzo}}</address></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" class="footer">
+  <div class="footer__riga contenitore">
+    <div class="footer__marchio">
+      {{#if haLogo}}<img src="/images/logo.png" alt="" width="150" height="150" loading="lazy" decoding="async">{{/if}}
+      <div>
+        <p class="footer__nome">{{site.nome}}</p>
+        <address>{{site.indirizzo}}</address>
+      </div>
+    </div>
+    <div class="footer__info">
+      <p>{{copyright}}</p>
+      <p><a href="/privacy.html" hreflang="it">{{interfaccia.privacy}}</a></p>
+      <div class="lingue" role="group" aria-label="{{interfaccia.selettoreLingua}}">
+        <ul>
+          {{#each lingue}}<li><a href="{{href}}" lang="{{codice}}" hreflang="{{codice}}" aria-label="{{nome}}"{{#if corrente}} aria-current="page"{{/if}}>{{sigla}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var riduci = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Le ancore non finiscono sotto l'intestazione (il CSS fa da riserva).
+  var header = document.getElementById('header');
+  function aggiornaPadding() {
+    if (header) document.documentElement.style.scrollPaddingTop = (header.offsetHeight + 8) + 'px';
+  }
+  aggiornaPadding();
+  window.addEventListener('resize', aggiornaPadding);
+  window.addEventListener('load', aggiornaPadding);
+
+  // Gallerie: frecce e contatore solo con 2 o più foto.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-galleria]'), function (galleria) {
+    var pista = galleria.querySelector('.galleria__pista');
+    var totale = pista ? pista.children.length : 0;
+    if (totale < 2) return;
+
+    function crea(classe, simbolo, etichetta, passo) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'galleria__freccia ' + classe;
+      b.textContent = simbolo;
+      b.setAttribute('aria-label', etichetta);
+      b.addEventListener('click', function () { vai(corrente() + passo); });
+      galleria.appendChild(b);
+      return b;
+    }
+    function corrente() { return pista.clientWidth ? Math.round(pista.scrollLeft / pista.clientWidth) : 0; }
+    function vai(i) {
+      i = Math.max(0, Math.min(totale - 1, i));
+      pista.scrollTo({ left: i * pista.clientWidth, behavior: riduci ? 'auto' : 'smooth' });
+    }
+
+    var prec = crea('galleria__freccia--prec', '\u2039', galleria.getAttribute('data-prec'), -1);
+    var succ = crea('galleria__freccia--succ', '\u203A', galleria.getAttribute('data-succ'), 1);
+    var contatore = document.createElement('p');
+    contatore.className = 'galleria__contatore';
+    contatore.setAttribute('aria-live', 'polite');
+    contatore.setAttribute('aria-atomic', 'true');
+    galleria.appendChild(contatore);
+
+    var ultimo = -1;
+    function aggiorna() {
+      var i = Math.max(0, Math.min(totale - 1, corrente()));
+      if (i === ultimo) return;
+      ultimo = i;
+      contatore.textContent = (i + 1) + ' / ' + totale;
+      prec.setAttribute('aria-disabled', String(i === 0));
+      succ.setAttribute('aria-disabled', String(i === totale - 1));
+    }
+    var attesa = false;
+    pista.addEventListener('scroll', function () {
+      if (attesa) return;
+      attesa = true;
+      window.requestAnimationFrame(function () { attesa = false; aggiorna(); });
+    });
+    aggiorna();
+  });
+
+  // Mappa: nessuna richiesta esterna finché non si preme il pulsante.
+  var mappa = document.querySelector('[data-mappa]');
+  if (mappa) {
+    mappa.hidden = false;
+    var pulsante = mappa.querySelector('[data-mostra-mappa]');
+    var riquadro = mappa.querySelector('.mappa__riquadro');
+    pulsante.addEventListener('click', function () {
+      var frame = document.createElement('iframe');
+      frame.title = mappa.getAttribute('data-titolo');
+      frame.setAttribute('loading', 'lazy');
+      frame.src = mappa.getAttribute('data-src');
+      riquadro.textContent = '';
+      riquadro.appendChild(frame);
+      frame.focus();
+    });
+  }
+})();
+</script>
 </body>
 </html>
