@@ -1,484 +1,331 @@
 {
   "site": {
-    "name": "La Terrazza",
-    "domain": "https://www.laterrazzadimarsala.it",
-    "defaultLanguage": "it",
-    "languages": [
-      "it",
-      "en"
-    ],
-    "address": {
-      "street": "Via Sebastiano Cammareri Scurti 22",
-      "city": "Marsala",
-      "province": "TP",
-      "country": "Italia",
-      "full": "Via Sebastiano Cammareri Scurti 22, Marsala (TP), Italia"
+    "dominio": "https://www.laterrazzadimarsala.it",
+    "nome": "La Terrazza",
+    "indirizzo": "Via Sebastiano Cammareri Scurti 22, Marsala (TP)",
+    "indirizzoSchema": {
+      "via": "Via Sebastiano Cammareri Scurti 22",
+      "localita": "Marsala",
+      "provincia": "TP",
+      "paese": "IT"
     },
-    "images": {
-      "logo": "images/logo.png",
-      "hero": "images/hero.jpg",
-      "favicon": "favicon.png"
+    "telefoni": ["+393313248361", "+393208496697"],
+    "email": "laterrazzadimarsala@gmail.com",
+    "latitudine": 37.799369,
+    "longitudine": 12.433649,
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Via+Sebastiano+Cammareri+Scurti+22+Marsala+TP",
+    "osmUrl": "https://www.openstreetmap.org/?mlat=37.799369&mlon=12.433649#map=19/37.799369/12.433649"
+  },
+
+  "lingue": [
+    { "codice": "it", "sigla": "IT", "nome": "Italiano" },
+    { "codice": "en", "sigla": "EN", "nome": "English" }
+  ],
+
+  "meta": {
+    "title": {
+      "it": "La Terrazza – Appartamenti nel centro storico di Marsala",
+      "en": "La Terrazza – Apartments in the historic centre of Marsala"
+    },
+    "description": {
+      "it": "Cinque appartamenti nel centro storico di Marsala, a pochi passi da piazze e chiese, vicino a Egadi, saline e Stagnone. Prenota chiamando o scrivendo.",
+      "en": "Five apartments in the historic centre of Marsala, a short walk from squares and churches, close to the Egadi Islands, salt pans and the Stagnone. Book by calling or writing."
     }
   },
-  "navigation": {
-    "it": [
-      {
-        "label": "Home",
-        "href": "#home"
-      },
-      {
-        "label": "La struttura",
-        "href": "#about"
-      },
-      {
-        "label": "Gli alloggi",
-        "href": "#apartments"
-      },
-      {
-        "label": "Marsala e dintorni",
-        "href": "#surroundings"
-      },
-      {
-        "label": "Contatti",
-        "href": "#contact"
-      }
-    ],
-    "en": [
-      {
-        "label": "Home",
-        "href": "#home"
-      },
-      {
-        "label": "About",
-        "href": "#about"
-      },
-      {
-        "label": "Accommodation",
-        "href": "#apartments"
-      },
-      {
-        "label": "Marsala and surroundings",
-        "href": "#surroundings"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
-    ]
-  },
-  "ui": {
-    "it": {
-      "buttons": {
-        "discoverApartments": "Scopri gli alloggi",
-        "contactToBook": "Contattaci per prenotare",
-        "bookOnWhatsApp": "Richiedi informazioni su WhatsApp",
-        "call": "Chiama",
-        "email": "Scrivici via email",
-        "viewDetails": "Scopri di più",
-        "backToHome": "Torna al sito",
-        "switchLanguage": "English"
-      },
-      "labels": {
-        "guestsUpTo": "Fino a {count} ospiti",
-        "floor": "{floor} piano",
-        "services": "Servizi inclusi",
-        "location": "Posizione",
-        "phone": "Telefono",
-        "email": "Email",
-        "address": "Indirizzo"
-      },
-      "sections": {
-        "about": "La struttura",
-        "apartments": "I nostri alloggi",
-        "services": "Comfort essenziali per il tuo soggiorno",
-        "surroundings": "Marsala e dintorni",
-        "contact": "Contatta La Terrazza"
-      },
-      "footer": {
-        "privacy": "Informativa privacy",
-        "copyright": "La Terrazza — Marsala, Sicilia"
-      }
+
+  "immagini": {
+    "altHero": {
+      "it": "Esterno de La Terrazza nel centro storico di Marsala, con la piazza e la chiesa storica vicine",
+      "en": "Exterior of La Terrazza in the historic centre of Marsala, with the nearby square and historic church"
     },
-    "en": {
-      "buttons": {
-        "discoverApartments": "Explore the accommodation",
-        "contactToBook": "Contact us to book",
-        "bookOnWhatsApp": "Enquire on WhatsApp",
-        "call": "Call",
-        "email": "Email us",
-        "viewDetails": "Discover more",
-        "backToHome": "Back to the website",
-        "switchLanguage": "Italiano"
-      },
-      "labels": {
-        "guestsUpTo": "Up to {count} guests",
-        "floor": "{floor} floor",
-        "services": "Included amenities",
-        "location": "Location",
-        "phone": "Phone",
-        "email": "Email",
-        "address": "Address"
-      },
-      "sections": {
-        "about": "About",
-        "apartments": "Our accommodation",
-        "services": "Essential comforts for your stay",
-        "surroundings": "Marsala and surroundings",
-        "contact": "Contact La Terrazza"
-      },
-      "footer": {
-        "privacy": "Privacy policy",
-        "copyright": "La Terrazza — Marsala, Sicily"
-      }
+    "altLogo": {
+      "it": "Logo de La Terrazza",
+      "en": "La Terrazza logo"
     }
   },
+
+  "interfaccia": {
+    "vaiAlContenuto": {
+      "it": "Vai al contenuto",
+      "en": "Skip to content"
+    },
+    "menuPrincipale": {
+      "it": "Menu principale",
+      "en": "Main menu"
+    },
+    "selettoreLingua": {
+      "it": "Lingua",
+      "en": "Language"
+    },
+    "chiama": {
+      "it": "Chiama",
+      "en": "Call"
+    },
+    "nuovaScheda": {
+      "it": "(si apre in una nuova scheda)",
+      "en": "(opens in a new tab)"
+    },
+    "copyright": {
+      "it": "© {anno} {nome}",
+      "en": "© {anno} {nome}"
+    },
+    "privacy": {
+      "it": "Informativa sulla privacy",
+      "en": "Privacy policy (Italian only)"
+    }
+  },
+
   "hero": {
-    "it": {
-      "title": "La Terrazza",
-      "subtitle": "Il punto di partenza ideale per scoprire le bellezze di Marsala",
-      "primaryButton": "Scopri gli alloggi",
-      "secondaryButton": "Contattaci per prenotare",
-      "image": "images/hero.jpg",
-      "imageAlt": "Veduta del centro storico di Marsala"
+    "titolo": {
+      "it": "La Terrazza",
+      "en": "La Terrazza"
     },
-    "en": {
-      "title": "La Terrazza",
-      "subtitle": "The ideal starting point for discovering the beauty of Marsala",
-      "primaryButton": "Explore the accommodation",
-      "secondaryButton": "Contact us to book",
-      "image": "images/hero.jpg",
-      "imageAlt": "View of Marsala's historic centre"
+    "sottotitolo": {
+      "it": "Il punto di partenza ideale per scoprire le bellezze di Marsala",
+      "en": "The ideal starting point for discovering the beauty of Marsala"
+    },
+    "pulsante": {
+      "it": "Prenota subito",
+      "en": "Book now"
     }
   },
-  "about": {
-    "it": {
-      "title": "La struttura",
-      "paragraphs": [
-        "Nel cuore del centro storico di Marsala, La Terrazza è il punto di partenza ideale per vivere la città e scoprire le bellezze della Sicilia occidentale.",
-        "La posizione permette di raggiungere a piedi piazze storiche, chiese monumentali e suggestivi scorci del centro, mentre a breve distanza si trovano le spiagge, le Isole Egadi, le saline e la Riserva Naturale dello Stagnone.",
-        "Le diverse soluzioni disponibili permettono di scegliere l'alloggio più adatto al proprio soggiorno, che si viaggi in coppia, in famiglia o con amici."
-      ]
-    },
-    "en": {
-      "title": "About La Terrazza",
-      "paragraphs": [
-        "In the heart of Marsala's historic centre, La Terrazza is an ideal base for experiencing the city and discovering the beauty of western Sicily.",
-        "Historic squares, monumental churches and charming streets are within walking distance. The beaches, the Egadi Islands, the salt pans and the Stagnone Nature Reserve are also within easy reach.",
-        "With several accommodation options available, you can choose the space that best suits your stay, whether travelling as a couple, with family or with friends."
-      ]
-    }
+
+  "disponibilita": {
+    "it": "Per verificare la disponibilità e prenotare, chiama o scrivi. Le date non sono visualizzabili online.",
+    "en": "To check availability and book, please call or write to us. Dates cannot be viewed online."
   },
-  "services": {
-    "it": {
-      "title": "Comfort essenziali per il tuo soggiorno",
-      "items": [
+
+  "sezioni": {
+    "struttura": {
+      "titolo": {
+        "it": "La struttura",
+        "en": "The property"
+      },
+      "testo": {
+        "it": "Nel cuore del centro storico di Marsala, La Terrazza è il punto di partenza ideale per vivere la città e scoprire le bellezze della Sicilia occidentale. La posizione permette di raggiungere a piedi piazze storiche, chiese monumentali e suggestivi scorci del centro, mentre a breve distanza si trovano le spiagge, le Isole Egadi, le saline e la Riserva Naturale dello Stagnone. Che si tratti di una fuga romantica, di una vacanza in famiglia o di un soggiorno con amici, La Terrazza offre diverse soluzioni per godersi Marsala con comodità e libertà.",
+        "en": "In the heart of Marsala's historic centre, La Terrazza is the ideal starting point for experiencing the city and discovering the beauty of western Sicily. Its position makes it possible to reach historic squares, monumental churches and picturesque corners of the centre on foot, while the beaches, the Egadi Islands, the salt pans and the Stagnone Nature Reserve are all a short distance away. Whether it is a romantic getaway, a family holiday or a stay with friends, La Terrazza offers several options for enjoying Marsala in comfort and freedom."
+      }
+    },
+    "appartamenti": {
+      "titolo": {
+        "it": "Appartamenti",
+        "en": "Apartments"
+      },
+      "fotoInArrivo": {
+        "it": "Foto in arrivo",
+        "en": "Photos coming soon"
+      },
+      "fotoPrecedente": {
+        "it": "Foto precedente",
+        "en": "Previous photo"
+      },
+      "fotoSuccessiva": {
+        "it": "Foto successiva",
+        "en": "Next photo"
+      },
+      "galleria": {
+        "it": "Galleria fotografica: {nome}",
+        "en": "Photo gallery: {nome}"
+      },
+      "altFoto": {
+        "it": "{nome} – foto {n} di {m}",
+        "en": "{nome} – photo {n} of {m}"
+      }
+    },
+    "servizi": {
+      "titolo": {
+        "it": "Servizi offerti",
+        "en": "Services offered"
+      },
+      "voci": [
         {
-          "name": "Wi-Fi",
-          "description": "Connessione Wi-Fi inclusa."
+          "it": "Wi-Fi",
+          "en": "Wi-Fi"
         },
         {
-          "name": "Aria condizionata",
-          "description": "Aria condizionata negli alloggi."
+          "it": "Aria condizionata",
+          "en": "Air conditioning"
         },
         {
-          "name": "Cucina attrezzata",
-          "description": "Cucina attrezzata per gestire i pasti in autonomia."
+          "it": "Cucina attrezzata",
+          "en": "Fully equipped kitchen"
         }
       ]
     },
-    "en": {
-      "title": "Essential comforts for your stay",
-      "items": [
+    "dintorni": {
+      "titolo": {
+        "it": "Dintorni",
+        "en": "Surroundings"
+      },
+      "voci": [
         {
-          "name": "Wi-Fi",
-          "description": "Wi-Fi connection included."
+          "titolo": {
+            "it": "Centro storico",
+            "en": "Historic centre"
+          },
+          "testo": {
+            "it": "Piazza della Repubblica e Duomo a 1 min a piedi; Porta Garibaldi a 2 min.",
+            "en": "Piazza della Repubblica and the Duomo are 1 minute away on foot; Porta Garibaldi is 2 minutes away."
+          }
         },
         {
-          "name": "Air conditioning",
-          "description": "Air conditioning in the accommodation."
+          "titolo": {
+            "it": "Porto e imbarco per le Egadi",
+            "en": "Port and departures for the Egadi Islands"
+          },
+          "testo": {
+            "it": "Circa 1 km, raggiungibili in 10 min a piedi; da qui partono i collegamenti per Favignana, Levanzo e Marettimo.",
+            "en": "About 1 km away, reachable in 10 minutes on foot; the connections to Favignana, Levanzo and Marettimo leave from here."
+          }
         },
         {
-          "name": "Equipped kitchen",
-          "description": "An equipped kitchen for preparing meals independently."
+          "titolo": {
+            "it": "Spiagge sabbiose",
+            "en": "Sandy beaches"
+          },
+          "testo": {
+            "it": "Il litorale di Lido Signorino dista circa 6 km, raggiungibile in 10 min in auto.",
+            "en": "The Lido Signorino shoreline is about 6 km away, reachable in 10 minutes by car."
+          }
+        },
+        {
+          "titolo": {
+            "it": "Riserva dello Stagnone e saline",
+            "en": "Stagnone Reserve and salt pans"
+          },
+          "testo": {
+            "it": "Circa 8 km, raggiungibili in 15 min in auto; ideali per ammirare i mulini a vento, visitare le saline e godersi il tramonto.",
+            "en": "About 8 km away, reachable in 15 minutes by car; ideal for admiring the windmills, visiting the salt pans and enjoying the sunset."
+          }
+        },
+        {
+          "titolo": {
+            "it": "Isola di Mozia",
+            "en": "Mozia Island"
+          },
+          "testo": {
+            "it": "Situata nella laguna dello Stagnone, è raggiungibile in auto fino all'imbarcadero e successivamente in barca.",
+            "en": "Located in the Stagnone lagoon, it can be reached by car as far as the landing stage and then by boat."
+          }
+        },
+        {
+          "titolo": {
+            "it": "Cantine storiche",
+            "en": "Historic wine cellars"
+          },
+          "testo": {
+            "it": "Le Cantine Florio si trovano a circa 2 km, raggiungibili in 7 min in auto.",
+            "en": "Cantine Florio is about 2 km away, reachable in 7 minutes by car."
+          }
         }
       ]
+    },
+    "mappa": {
+      "titolo": {
+        "it": "Dove siamo",
+        "en": "Where we are"
+      },
+      "pulsante": {
+        "it": "Mostra mappa",
+        "en": "Show map"
+      },
+      "nota": {
+        "it": "Premendo il pulsante, la mappa viene caricata da OpenStreetMap.",
+        "en": "When you press the button, the map is loaded from OpenStreetMap."
+      },
+      "titoloIframe": {
+        "it": "Mappa di OpenStreetMap con la posizione de La Terrazza a Marsala",
+        "en": "OpenStreetMap map showing the location of La Terrazza in Marsala"
+      },
+      "apriGoogle": {
+        "it": "Apri su Google Maps",
+        "en": "Open on Google Maps"
+      },
+      "apriOsm": {
+        "it": "Apri su OpenStreetMap",
+        "en": "Open on OpenStreetMap"
+      }
+    },
+    "contatti": {
+      "titolo": {
+        "it": "Contatti",
+        "en": "Contact"
+      },
+      "telefono": {
+        "it": "Telefono",
+        "en": "Phone"
+      },
+      "email": {
+        "it": "Email",
+        "en": "Email"
+      },
+      "indirizzo": {
+        "it": "Indirizzo",
+        "en": "Address"
+      }
     }
   },
-  "apartments": [
+
+  "appartamenti": [
     {
       "id": "suite",
-      "name": "Suite",
-      "capacity": 4,
-      "floor": 3,
-      "imagesDirectory": "images/suite/",
-      "images": [
-        "images/suite/01.jpg",
-        "images/suite/02.jpg",
-        "images/suite/03.jpg",
-        "images/suite/04.jpg",
-        "images/suite/05.jpg",
-        "images/suite/06.jpg",
-        "images/suite/07.jpg",
-        "images/suite/08.jpg",
-        "images/suite/09.jpg",
-        "images/suite/10.jpg",
-        "images/suite/11.jpg",
-        "images/suite/12.jpg"
-      ],
-      "it": {
-        "title": "Suite",
-        "description": "Elegante e luminosa, la Suite si distingue per il suo ampio terrazzo arredato, con divanetti bianchi, ombrellone e vegetazione. La vista sulle cupole delle chiese del centro storico crea un'atmosfera suggestiva, ideale per rilassarsi all'aperto e godersi le serate estive.",
-        "imageAlt": "Suite e terrazzo privato"
+      "nome": "Suite",
+      "dettagli": {
+        "it": "Fino a 4 ospiti · Terzo piano",
+        "en": "Up to 4 guests · Third floor"
       },
-      "en": {
-        "title": "Suite",
-        "description": "Elegant and bright, the Suite stands out for its spacious furnished terrace, complete with white sofas, a parasol and greenery. Views of the domes of the historic centre's churches create a charming setting for relaxing outdoors and enjoying summer evenings.",
-        "imageAlt": "Suite and private terrace"
-      },
-      "amenitiesRef": "services"
+      "descrizione": {
+        "it": "Elegante e luminosa, la Suite si distingue per il suo ampio terrazzo arredato, con divanetti bianchi, ombrellone e vegetazione. La vista sulle cupole delle chiese del centro storico crea un'atmosfera suggestiva, ideale per rilassarsi all'aperto e godersi le serate estive.",
+        "en": "Elegant and bright, the Suite stands out for its large furnished terrace, with white sofas, a parasol and greenery. The view over the domes of the churches of the historic centre creates an atmospheric setting, ideal for relaxing outdoors and enjoying summer evenings."
+      }
     },
     {
       "id": "marettimo",
-      "name": "Marettimo",
-      "capacity": 3,
-      "floor": 2,
-      "imagesDirectory": "images/marettimo/",
-      "images": [
-        "images/marettimo/01.jpg",
-        "images/marettimo/02.jpg",
-        "images/marettimo/03.jpg",
-        "images/marettimo/04.jpg",
-        "images/marettimo/05.jpg",
-        "images/marettimo/06.jpg",
-        "images/marettimo/07.jpg",
-        "images/marettimo/08.jpg",
-        "images/marettimo/09.jpg",
-        "images/marettimo/10.jpg"
-      ],
-      "it": {
-        "title": "Marettimo",
-        "description": "Spazioso e accogliente, Marettimo dispone di un terrazzo privato dove concedersi una pausa dopo una giornata trascorsa tra le vie del centro e le bellezze del territorio. Una soluzione pensata per chi desidera unire una posizione centrale a uno spazio all'aperto tutto suo.",
-        "imageAlt": "Alloggio Marettimo"
+      "nome": "Marettimo",
+      "dettagli": {
+        "it": "Fino a 3 ospiti · Secondo piano",
+        "en": "Up to 3 guests · Second floor"
       },
-      "en": {
-        "title": "Marettimo",
-        "description": "Spacious and welcoming, Marettimo features a private terrace where you can unwind after a day exploring the historic centre and the surrounding area. It is a good choice for guests who want a central location as well as their own outdoor space.",
-        "imageAlt": "Marettimo accommodation"
-      },
-      "amenitiesRef": "services"
+      "descrizione": {
+        "it": "Spazioso e accogliente, Marettimo dispone di un terrazzo privato dove concedersi una pausa dopo una giornata trascorsa tra le vie del centro e le bellezze del territorio. Una soluzione pensata per chi desidera unire una posizione centrale a uno spazio all'aperto tutto suo.",
+        "en": "Spacious and welcoming, Marettimo has a private terrace where you can take a break after a day spent among the streets of the centre and the sights of the area. A solution designed for those who want to combine a central location with an outdoor space all of their own."
+      }
     },
     {
       "id": "levanzo",
-      "name": "Levanzo",
-      "capacity": 2,
-      "floor": 2,
-      "imagesDirectory": "images/levanzo/",
-      "images": [
-        "images/levanzo/01.jpg",
-        "images/levanzo/02.jpg",
-        "images/levanzo/03.jpg",
-        "images/levanzo/04.jpg",
-        "images/levanzo/05.jpg",
-        "images/levanzo/06.jpg"
-      ],
-      "it": {
-        "title": "Levanzo",
-        "description": "Intimo e funzionale, Levanzo è ideale per una coppia in cerca di una pausa a Marsala. Il balcone affacciato sulla via principale permette di osservare la vita del centro storico e di respirare l'atmosfera della città direttamente dal proprio alloggio.",
-        "imageAlt": "Alloggio Levanzo e balcone"
+      "nome": "Levanzo",
+      "dettagli": {
+        "it": "Fino a 2 ospiti · Secondo piano",
+        "en": "Up to 2 guests · Second floor"
       },
-      "en": {
-        "title": "Levanzo",
-        "description": "Intimate and functional, Levanzo is ideal for a couple looking for a getaway in Marsala. Its balcony overlooks the main street, offering a glimpse of daily life in the historic centre and the city's atmosphere from the comfort of your accommodation.",
-        "imageAlt": "Levanzo accommodation and balcony"
-      },
-      "amenitiesRef": "services"
+      "descrizione": {
+        "it": "Intimo e funzionale, Levanzo è ideale per una coppia in cerca di una pausa a Marsala. Il balcone affacciato sulla via principale permette di osservare la vita del centro storico e di respirare l'atmosfera della città direttamente dal proprio alloggio.",
+        "en": "Intimate and functional, Levanzo is ideal for a couple looking for a break in Marsala. The balcony overlooking the main street lets you watch life in the historic centre and soak up the atmosphere of the city straight from your own accommodation."
+      }
     },
     {
       "id": "favignana",
-      "name": "Favignana",
-      "capacity": 3,
-      "floor": 2,
-      "imagesDirectory": "images/favignana/",
-      "images": [
-        "images/favignana/01.jpg",
-        "images/favignana/02.jpg",
-        "images/favignana/03.jpg",
-        "images/favignana/04.jpg"
-      ],
-      "it": {
-        "title": "Favignana",
-        "description": "Confortevole e versatile, Favignana può accogliere fino a tre ospiti e offre un balcone affacciato sulla via principale del centro storico. È una base comoda per esplorare Marsala, passeggiare tra i suoi luoghi più caratteristici e organizzare escursioni nei dintorni.",
-        "imageAlt": "Alloggio Favignana e balcone"
+      "nome": "Favignana",
+      "dettagli": {
+        "it": "Fino a 3 ospiti · Secondo piano",
+        "en": "Up to 3 guests · Second floor"
       },
-      "en": {
-        "title": "Favignana",
-        "description": "Comfortable and versatile, Favignana accommodates up to three guests and has a balcony overlooking the main street of the historic centre. It is a convenient base for exploring Marsala, strolling through its most distinctive streets and planning trips around the area.",
-        "imageAlt": "Favignana accommodation and balcony"
-      },
-      "amenitiesRef": "services"
+      "descrizione": {
+        "it": "Confortevole e versatile, Favignana può accogliere fino a tre ospiti e offre un balcone affacciato sulla via principale del centro storico. È una base comoda per esplorare Marsala, passeggiare tra i suoi luoghi più caratteristici e organizzare escursioni nei dintorni.",
+        "en": "Comfortable and versatile, Favignana can accommodate up to three guests and has a balcony overlooking the main street of the historic centre. It is a convenient base for exploring Marsala, strolling through its most characteristic places and organising excursions in the surrounding area."
+      }
     },
     {
       "id": "pantelleria",
-      "name": "Pantelleria",
-      "capacity": 4,
-      "floor": 0,
-      "imagesDirectory": "images/pantelleria/",
-      "images": [
-        "images/pantelleria/01.jpg",
-        "images/pantelleria/02.jpg",
-        "images/pantelleria/03.jpg"
-      ],
-      "it": {
-        "title": "Pantelleria",
-        "description": "Pratico e funzionale, Pantelleria può ospitare fino a quattro persone al piano terra. È una soluzione da considerare per famiglie e piccoli gruppi che cercano una sistemazione comoda da cui partire alla scoperta del centro storico e delle attrazioni di Marsala.",
-        "imageAlt": "Alloggio Pantelleria"
+      "nome": "Pantelleria",
+      "dettagli": {
+        "it": "Fino a 4 ospiti · Piano terra",
+        "en": "Up to 4 guests · Ground floor"
       },
-      "en": {
-        "title": "Pantelleria",
-        "description": "Practical and functional, Pantelleria accommodates up to four guests on the ground floor. It is an option for families and small groups looking for a convenient base from which to explore the historic centre and attractions of Marsala.",
-        "imageAlt": "Pantelleria accommodation"
-      },
-      "amenitiesRef": "services"
+      "descrizione": {
+        "it": "Pratico e funzionale, Pantelleria può ospitare fino a quattro persone al piano terra. È una soluzione da considerare per famiglie e piccoli gruppi che cercano una sistemazione comoda da cui partire alla scoperta del centro storico e delle attrazioni di Marsala.",
+        "en": "Practical and functional, Pantelleria can accommodate up to four people on the ground floor. It is an option to consider for families and small groups looking for a comfortable place to stay from which to set off and discover the historic centre and the attractions of Marsala."
+      }
     }
-  ],
-  "surroundings": {
-    "it": {
-      "title": "Marsala e dintorni",
-      "intro": "Soggiornare a La Terrazza significa avere il centro storico a portata di passeggiata e alcune delle mete più suggestive della Sicilia occidentale a breve distanza. Dalle piazze monumentali alle spiagge, dalle saline al mare delle Egadi, Marsala è una base ideale per esplorare il territorio.",
-      "items": [
-        {
-          "id": "historic-centre",
-          "name": "Centro storico",
-          "description": "Piazza della Repubblica e il Duomo si raggiungono in circa un minuto a piedi; Porta Garibaldi in circa due minuti.",
-          "distance": "Piazza della Repubblica e Duomo: circa 1 minuto a piedi; Porta Garibaldi: circa 2 minuti a piedi."
-        },
-        {
-          "id": "port-egadi",
-          "name": "Porto e Isole Egadi",
-          "description": "Il porto si trova a circa 1 km dalla struttura, raggiungibile in circa 10 minuti a piedi. Da qui partono i collegamenti marittimi per Favignana, Levanzo e Marettimo.",
-          "distance": "Circa 1 km · 10 minuti a piedi."
-        },
-        {
-          "id": "beaches",
-          "name": "Spiagge di Marsala",
-          "description": "Il litorale di Lido Signorino dista circa 6 km, con un tempo indicativo di 10 minuti in auto.",
-          "distance": "Lido Signorino: circa 6 km · 10 minuti in auto."
-        },
-        {
-          "id": "stagnone",
-          "name": "Saline e Riserva Naturale dello Stagnone",
-          "description": "A circa 8 km, lo Stagnone offre paesaggi caratteristici, mulini a vento, saline e tramonti sulla laguna.",
-          "distance": "Circa 8 km · 15 minuti in auto."
-        },
-        {
-          "id": "mozia",
-          "name": "Isola di Mozia",
-          "description": "Nel cuore della laguna dello Stagnone, Mozia è raggiungibile in auto fino a un imbarcadero e proseguendo in barca.",
-          "distance": "Raggiungibile in auto e successivamente in barca."
-        },
-        {
-          "id": "florio",
-          "name": "Cantine Florio",
-          "description": "Le storiche Cantine Florio offrono l'opportunità di approfondire la tradizione enologica del territorio.",
-          "distance": "Circa 2 km · 7 minuti in auto."
-        }
-      ]
-    },
-    "en": {
-      "title": "Marsala and surroundings",
-      "intro": "Staying at La Terrazza means having the historic centre within easy walking distance and some of western Sicily's most appealing destinations nearby. From monumental squares to beaches, salt pans and the waters of the Egadi Islands, Marsala is an excellent base for exploring the area.",
-      "items": [
-        {
-          "id": "historic-centre",
-          "name": "Historic centre",
-          "description": "Piazza della Repubblica and the Cathedral are about a one-minute walk away; Porta Garibaldi is around two minutes away.",
-          "distance": "Piazza della Repubblica and Cathedral: about 1 minute on foot; Porta Garibaldi: about 2 minutes on foot."
-        },
-        {
-          "id": "port-egadi",
-          "name": "Port and Egadi Islands",
-          "description": "The port is about 1 km from the property, around a 10-minute walk. Ferries to Favignana, Levanzo and Marettimo depart from here.",
-          "distance": "About 1 km · 10-minute walk."
-        },
-        {
-          "id": "beaches",
-          "name": "Marsala's beaches",
-          "description": "The Lido Signorino coastline is about 6 km away, approximately a 10-minute drive.",
-          "distance": "Lido Signorino: about 6 km · 10-minute drive."
-        },
-        {
-          "id": "stagnone",
-          "name": "Salt pans and Stagnone Nature Reserve",
-          "description": "About 8 km away, the Stagnone area is known for its distinctive landscapes, windmills, salt pans and lagoon sunsets.",
-          "distance": "About 8 km · 15-minute drive."
-        },
-        {
-          "id": "mozia",
-          "name": "Mozia Island",
-          "description": "Located in the Stagnone lagoon, Mozia can be reached by car to a boat landing point, followed by a boat crossing.",
-          "distance": "Accessible by car and then by boat."
-        },
-        {
-          "id": "florio",
-          "name": "Florio Wine Cellars",
-          "description": "The historic Florio Wine Cellars offer an opportunity to discover the area's winemaking tradition.",
-          "distance": "About 2 km · 7-minute drive."
-        }
-      ]
-    }
-  },
-  "contact": {
-    "it": {
-      "title": "Contatta La Terrazza",
-      "intro": "Vuoi organizzare il tuo soggiorno a Marsala? Contattaci per informazioni sugli alloggi, disponibilità e prenotazioni.",
-      "whatsappMessage": "Buongiorno, vorrei ricevere informazioni sugli alloggi e sulla disponibilità presso La Terrazza a Marsala.",
-      "addressLabel": "Indirizzo",
-      "phoneLabel": "Telefono",
-      "emailLabel": "Email",
-      "whatsappLabel": "WhatsApp"
-    },
-    "en": {
-      "title": "Contact La Terrazza",
-      "intro": "Planning a stay in Marsala? Contact us for information about our accommodation, availability and bookings.",
-      "whatsappMessage": "Hello, I would like information about the accommodation and availability at La Terrazza in Marsala.",
-      "addressLabel": "Address",
-      "phoneLabel": "Phone",
-      "emailLabel": "Email",
-      "whatsappLabel": "WhatsApp"
-    },
-    "phones": [
-      "+39 320 849 6697",
-      "+39 331 324 8361"
-    ],
-    "whatsappNumber": "393313248361",
-    "email": "laterrazzadimarsala@gmail.com",
-    "address": "Via Sebastiano Cammareri Scurti 22, Marsala (TP), Italia",
-    "links": {
-      "whatsappBase": "https://wa.me/393313248361",
-      "emailBase": "mailto:laterrazzadimarsala@gmail.com",
-      "phone1": "tel:+393208496697",
-      "phone2": "tel:+393313248361"
-    }
-  },
-  "seo": {
-    "it": {
-      "homeTitle": "La Terrazza Marsala | Alloggi nel centro storico",
-      "homeDescription": "Soggiorna a La Terrazza, nel centro storico di Marsala. Scopri i nostri cinque alloggi e raggiungi comodamente piazze, porto, spiagge, saline e Isole Egadi.",
-      "canonical": "https://www.laterrazzadimarsala.it/",
-      "language": "it-IT"
-    },
-    "en": {
-      "homeTitle": "La Terrazza Marsala | Accommodation in the Historic Centre",
-      "homeDescription": "Stay at La Terrazza in the heart of Marsala's historic centre. Explore our five accommodation options and enjoy easy access to the town, port, beaches, salt pans and Egadi Islands.",
-      "canonical": "https://www.laterrazzadimarsala.it/en/",
-      "language": "en"
-    }
-  },
-  "legal": {
-    "privacyPath": "privacy.html",
-    "privacyLabel": {
-      "it": "Informativa privacy",
-      "en": "Privacy policy"
-    }
-  }
+  ]
 }
