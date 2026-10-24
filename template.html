@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{SEO_TITLE}}</title>
+  <meta name="description" content="{{SEO_DESCRIPTION}}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{CANONICAL}}">
+  {{HREFLANG}}
+  <link rel="icon" type="image/png" href="{{FAVICON}}">
+  <meta name="theme-color" content="#172b3a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="La Terrazza">
+  <meta property="og:title" content="{{SEO_TITLE}}">
+  <meta property="og:description" content="{{SEO_DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:image" content="{{HERO_IMAGE_ABSOLUTE}}">
+  <meta name="twitter:card" content="summary_large_image">
+  {{SCHEMA_JSON}}
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b3a;
+      --muted: #5e6870;
+      --paper: #fbf9f5;
+      --white: #fff;
+      --accent: #b69a68;
+      --line: #e6e0d6;
+      --content: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 100;
+      padding: .7rem 1rem; background: var(--white);
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(251,249,245,.97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      width: min(calc(100% - 2.5rem), var(--content));
+      min-height: 76px; margin: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .brand { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; }
+    .brand img { width: 48px; height: 48px; object-fit: contain; }
+    .brand-name { font-size: 1.15rem; letter-spacing: .04em; }
+    .header-right { display: flex; align-items: center; gap: 1.25rem; }
+    .main-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem; }
+    .main-nav a, .language-link {
+      font-family: Arial, sans-serif; font-size: .83rem; text-decoration: none;
+    }
+    .main-nav a:hover, .language-link:hover { color: #80663c; }
+    .language-link { border-left: 1px solid var(--line); padding-left: 1.2rem; white-space: nowrap; }
+    .hero {
+      min-height: min(76vh, 760px); position: relative; isolation: isolate;
+      display: grid; place-items: center; text-align: center; color: var(--white);
+      background: var(--ink); overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background: url("{{HERO_IMAGE}}") center 50% / cover no-repeat;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(90deg, rgba(10,23,32,.62), rgba(10,23,32,.30), rgba(10,23,32,.56));
+    }
+    .hero-content { width: min(calc(100% - 2rem), 850px); padding: 6rem 0; }
+    .eyebrow {
+      margin: 0 0 1rem; color: #e4d2ad; text-transform: uppercase;
+      letter-spacing: .19em; font: 600 .75rem/1.5 Arial, sans-serif;
+    }
+    h1, h2, h3 { font-weight: 400; line-height: 1.2; }
+    h1 { margin: 0 auto 1.2rem; font-size: clamp(2.8rem, 7vw, 5.8rem); }
+    .hero-subtitle { max-width: 690px; margin: 0 auto 2rem; font-size: clamp(1.1rem, 2.5vw, 1.45rem); }
+    .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: .7rem 1.2rem; border: 1px solid var(--accent);
+      background: var(--accent); color: #17232a; text-decoration: none;
+      font: 600 .85rem/1.4 Arial, sans-serif; letter-spacing: .01em;
+    }
+    .button.secondary { color: var(--white); background: transparent; border-color: rgba(255,255,255,.75); }
+    .button:hover { filter: brightness(1.06); }
+    .section { padding: clamp(4rem, 8vw, 7rem) 0; }
+    .section.white { background: var(--white); }
+    .section-inner { width: min(calc(100% - 2.5rem), var(--content)); margin: auto; }
+    .section-heading { max-width: 760px; margin: 0 auto 2.7rem; text-align: center; }
+    .section-heading h2 { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 3.25rem); }
+    .section-heading p { margin: .6rem 0 0; color: var(--muted); }
+    .about-copy { max-width: 820px; margin: auto; }
+    .about-copy p { margin: 0 0 1.1rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .service-card { padding: 1.5rem; border: 1px solid var(--line); background: var(--paper); }
+    .service-card h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .96rem; }
+    .apartment-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+    .apartment-card { min-width: 0; background: var(--white); border: 1px solid var(--line); }
+    .apartment-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #e8e3db; }
+    .apartment-body { padding: 1.5rem; }
+    .apartment-body h3 { margin: 0 0 .6rem; font-size: 1.8rem; }
+    .apartment-meta { margin: 0 0 .8rem; color: var(--muted); font: .83rem/1.5 Arial, sans-serif; }
+    .apartment-body p { margin: 0 0 1rem; }
+    .apartment-gallery { display: flex; gap: .5rem; overflow-x: auto; padding: 0 1.5rem 1.5rem; }
+    .apartment-gallery img { width: 110px; height: 78px; flex: 0 0 auto; object-fit: cover; }
+    .places-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .place-card { padding: 1.4rem 1.5rem; border-top: 1px solid var(--accent); background: var(--white); }
+    .place-card h3 { margin: 0 0 .5rem; font-size: 1.4rem; }
+    .place-card p { margin: 0 0 .5rem; }
+    .place-distance { color: var(--muted); font: .82rem/1.5 Arial, sans-serif; }
+    .contact-section { color: var(--white); background: var(--ink); }
+    .contact-section .section-heading p { color: #d4d8da; }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; max-width: 900px; margin: auto; }
+    .contact-panel { padding: 1.5rem; border: 1px solid rgba(255,255,255,.22); }
+    .contact-panel h3 { margin: 0 0 .8rem; color: #e4d2ad; font-size: 1.4rem; }
+    .contact-panel p { margin: .35rem 0; overflow-wrap: anywhere; }
+    .contact-panel a { text-underline-offset: 4px; }
+    .contact-actions { margin-top: 1.5rem; }
+    .site-footer { padding: 1.6rem 1rem; text-align: center; color: var(--muted); font: .8rem/1.7 Arial, sans-serif; }
+    .site-footer a { margin: 0 .5rem; }
+    @media (max-width: 760px) {
+      .header-inner { width: min(calc(100% - 1.5rem), var(--content)); padding: .7rem 0; align-items: flex-start; }
+      .brand img { width: 40px; height: 40px; }
+      .header-right { flex-direction: column-reverse; align-items: flex-end; gap: .45rem; }
+      .main-nav { justify-content: flex-end; gap: .45rem .8rem; }
+      .main-nav a, .language-link { font-size: .75rem; }
+      .language-link { padding-left: .7rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .apartment-grid, .places-list, .contact-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 68vh; }
+    }
+    @media (max-width: 420px) {
+      .header-inner { gap: .5rem; }
+      .brand-name { font-size: 1rem; }
+      .main-nav { max-width: 225px; }
+      .main-nav a { font-size: .7rem; }
+      .hero-content { padding: 4rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">{{SKIP_LINK_LABEL}}</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="La Terrazza — home">
+        <img src="{{LOGO_IMAGE}}" alt="" width="48" height="48">
+        <span class="brand-name">La Terrazza</span>
+      </a>
+      <div class="header-right">
+        <nav class="main-nav" aria-label="{{NAVIGATION_LABEL}}">
+          {{NAVIGATION}}
+        </nav>
+        <a class="language-link" href="{{LANGUAGE_SWITCH_URL}}" lang="{{LANGUAGE_SWITCH_LANG}}">{{LANGUAGE_SWITCH_LABEL}}</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home" aria-label="{{HERO_IMAGE_ALT}}">
+      <div class="hero-content">
+        <p class="eyebrow">Marsala · Sicilia</p>
+        <h1>{{HERO_TITLE}}</h1>
+        <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+        <div class="button-row">
+          <a class="button" href="#apartments">{{HERO_PRIMARY_BUTTON}}</a>
+          <a class="button secondary" href="#contact">{{HERO_SECONDARY_BUTTON}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="about">
+      <div class="section-inner">
+        <div class="section-heading"><h2>{{ABOUT_TITLE}}</h2></div>
+        <div class="about-copy">{{ABOUT_PARAGRAPHS}}</div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-inner">
+        <div class="section-heading"><h2>{{SERVICES_TITLE}}</h2></div>
+        <div class="service-grid">{{SERVICES_ITEMS}}</div>
+      </div>
+    </section>
+
+    <section class="section white" id="apartments">
+      <div class="section-inner">
+        <div class="section-heading"><h2>{{APARTMENTS_TITLE}}</h2></div>
+        <div class="apartment-grid">{{APARTMENTS_ITEMS}}</div>
+      </div>
+    </section>
+
+    <section class="section" id="surroundings">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>{{SURROUNDINGS_TITLE}}</h2>
+          <p>{{SURROUNDINGS_INTRO}}</p>
+        </div>
+        <div class="places-list">{{SURROUNDINGS_ITEMS}}</div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>{{CONTACT_TITLE}}</h2>
+          <p>{{CONTACT_INTRO}}</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>{{CONTACT_DETAILS_HEADING}}</h3>
+            <p><strong>{{PHONE_LABEL}}:</strong></p>
+            {{CONTACT_PHONES}}
+            <p><strong>{{EMAIL_LABEL}}:</strong> <a href="{{EMAIL_URL}}">{{EMAIL_ADDRESS}}</a></p>
+            <p><strong>{{ADDRESS_LABEL}}:</strong> {{CONTACT_ADDRESS}}</p>
+          </div>
+          <div class="contact-panel">
+            <h3>{{BOOKING_HEADING}}</h3>
+            <p>{{WHATSAPP_INTRO}}</p>
+            <div class="contact-actions">
+              <a class="button" href="{{WHATSAPP_URL}}" target="_blank" rel="noopener noreferrer">{{WHATSAPP_LABEL}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>{{FOOTER_COPYRIGHT}}</p>
+    <p><a href="{{PRIVACY_URL}}">{{PRIVACY_LABEL}}</a></p>
+  </footer>
+</body>
+</html>
