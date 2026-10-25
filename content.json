@@ -300,8 +300,8 @@
         "en": "Up to 5 guests · First floor"
       },
       "descrizione": {
-        "it": "Intimo e funzionale, Levanzo è ideale per una coppia in cerca di una pausa a Marsala. Il balcone affacciato sulla via principale permette di osservare la vita del centro storico e di respirare l'atmosfera della città direttamente dal proprio alloggio.",
-        "en": "Intimate and functional, Levanzo is ideal for a couple looking for a break in Marsala. The balcony overlooking the main street lets you watch life in the historic centre and soak up the atmosphere of the city straight from your own accommodation."
+        "it": "Confortevole e versatile, Favignana può accogliere fino a tre ospiti e offre un balcone affacciato sulla via principale del centro storico. È una base comoda per esplorare Marsala, passeggiare tra i suoi luoghi più caratteristici e organizzare escursioni nei dintorni.",
+        "en": "Comfortable and versatile, Favignana can accommodate up to three guests and has a balcony overlooking the main street of the historic centre. It is a convenient base for exploring Marsala, strolling through its most characteristic places and organising excursions in the surrounding area."
       }
     },
     {
@@ -312,10 +312,10 @@
         "en": "Up to 3 guests · First floor"
       },
       "descrizione": {
-        "it": "Confortevole e versatile, Favignana può accogliere fino a tre ospiti e offre un balcone affacciato sulla via principale del centro storico. È una base comoda per esplorare Marsala, passeggiare tra i suoi luoghi più caratteristici e organizzare escursioni nei dintorni.",
-        "en": "Comfortable and versatile, Favignana can accommodate up to three guests and has a balcony overlooking the main street of the historic centre. It is a convenient base for exploring Marsala, strolling through its most characteristic places and organising excursions in the surrounding area."
+        "it": "Intimo e funzionale, Levanzo è ideale per una coppia in cerca di una pausa a Marsala. Il balcone affacciato sulla via principale permette di osservare la vita del centro storico e di respirare l'atmosfera della città direttamente dal proprio alloggio.",
+        "en": "Intimate and functional, Levanzo is ideal for a couple looking for a break in Marsala. The balcony overlooking the main street lets you watch life in the historic centre and soak up the atmosphere of the city straight from your own accommodation."
       }
-    },
+    }, 
     {
       "id": "pantelleria",
       "nome": "Pantelleria",
