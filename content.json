@@ -271,8 +271,9 @@
       "id": "suite",
       "nome": "Suite",
       "dettagli": {
-        "it": "Fino a 4 ospiti · Terzo piano",
-        "en": "Up to 4 guests · Third floor"
+        "it": "Fino a 5 ospiti · Secondo piano",
+        "en": "Up to 5 guests · Second floor"
+
       },
       "descrizione": {
         "it": "Elegante e luminosa, la Suite si distingue per il suo ampio terrazzo arredato, con divanetti bianchi, ombrellone e vegetazione. La vista sulle cupole delle chiese del centro storico crea un'atmosfera suggestiva, ideale per rilassarsi all'aperto e godersi le serate estive.",
@@ -283,8 +284,8 @@
       "id": "marettimo",
       "nome": "Marettimo",
       "dettagli": {
-        "it": "Fino a 3 ospiti · Secondo piano",
-        "en": "Up to 3 guests · Second floor"
+        "it": "Fino a 5 ospiti · Primo piano",
+        "en": "Up to 5 guests · First floor"
       },
       "descrizione": {
         "it": "Spazioso e accogliente, Marettimo dispone di un terrazzo privato dove concedersi una pausa dopo una giornata trascorsa tra le vie del centro e le bellezze del territorio. Una soluzione pensata per chi desidera unire una posizione centrale a uno spazio all'aperto tutto suo.",
@@ -293,10 +294,10 @@
     },
     {
       "id": "levanzo",
-      "nome": "Levanzo",
+            "nome": "Favignana",
       "dettagli": {
-        "it": "Fino a 2 ospiti · Secondo piano",
-        "en": "Up to 2 guests · Second floor"
+        "it": "Fino a 3 ospiti · Primo piano",
+        "en": "Up to 3 guests · First floor"
       },
       "descrizione": {
         "it": "Intimo e funzionale, Levanzo è ideale per una coppia in cerca di una pausa a Marsala. Il balcone affacciato sulla via principale permette di osservare la vita del centro storico e di respirare l'atmosfera della città direttamente dal proprio alloggio.",
@@ -305,10 +306,10 @@
     },
     {
       "id": "favignana",
-      "nome": "Favignana",
+            "nome": "Levanzo",
       "dettagli": {
-        "it": "Fino a 3 ospiti · Secondo piano",
-        "en": "Up to 3 guests · Second floor"
+        "it": "Fino a 5 ospiti · Primo piano",
+        "en": "Up to 5 guests · First floor"
       },
       "descrizione": {
         "it": "Confortevole e versatile, Favignana può accogliere fino a tre ospiti e offre un balcone affacciato sulla via principale del centro storico. È una base comoda per esplorare Marsala, passeggiare tra i suoi luoghi più caratteristici e organizzare escursioni nei dintorni.",
@@ -319,8 +320,8 @@
       "id": "pantelleria",
       "nome": "Pantelleria",
       "dettagli": {
-        "it": "Fino a 4 ospiti · Piano terra",
-        "en": "Up to 4 guests · Ground floor"
+        "it": "Fino a 5 ospiti · Piano terra",
+        "en": "Up to 5 guests · Ground floor"
       },
       "descrizione": {
         "it": "Pratico e funzionale, Pantelleria può ospitare fino a quattro persone al piano terra. È una soluzione da considerare per famiglie e piccoli gruppi che cercano una sistemazione comoda da cui partire alla scoperta del centro storico e delle attrazioni di Marsala.",
